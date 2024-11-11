@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Meal Recommendations</h1>
+        <p><strong>Goal:</strong> {{ goal.capitalize() }}</p>
+        <p><strong>BMR:</strong> {{ bmr }}</p>
+        <p><strong>TDEE:</strong> {{ tdee }}</p>
+        <p><strong>Total Calories Needed:</strong> {{ total_calories }}</p>
+
+        <h2>Breakfast</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Calories</th>
+                    <th>Fats</th>
+                    <th>Proteins</th>
+                    <th>Iron</th>
+                    <th>Calcium</th>
+                    <th>Sodium</th>
+                    <th>Potassium</th>
+                    <th>Carbohydrates</th>
+                    <th>Fibre</th>
+                    <th>Vitamin D</th>
+                    <th>Sugars</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in recommendations %}
+                    {% if item.Meal == 'Breakfast' %}
+                        <tr>
+                            <td>{{ item['Food Item'] }}</td>
+                            <td>{{ item['Calories'] }}</td>
+                            <td>{{ item['Fats'] }}</td>
+                            <td>{{ item['Proteins'] }}</td>
+                            <td>{{ item['Iron'] }}</td>
+                            <td>{{ item['Calcium'] }}</td>
+                            <td>{{ item['Sodium'] }}</td>
+                            <td>{{ item['Potassium'] }}</td>
+                            <td>{{ item['Carbohydrates'] }}</td>
+                            <td>{{ item['Fibre'] }}</td>
+                            <td>{{ item['VitaminD'] }}</td>
+                            <td>{{ item['Sugars'] }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Lunch</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Calories</th>
+                    <th>Fats</th>
+                    <th>Proteins</th>
+                    <th>Iron</th>
+                    <th>Calcium</th>
+                    <th>Sodium</th>
+                    <th>Potassium</th>
+                    <th>Carbohydrates</th>
+                    <th>Fibre</th>
+                    <th>Vitamin D</th>
+                    <th>Sugars</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in recommendations %}
+                    {% if item.Meal == 'Lunch' %}
+                        <tr>
+                            <td>{{ item['Food Item'] }}</td>
+                            <td>{{ item['Calories'] }}</td>
+                            <td>{{ item['Fats'] }}</td>
+                            <td>{{ item['Proteins'] }}</td>
+                            <td>{{ item['Iron'] }}</td>
+                            <td>{{ item['Calcium'] }}</td>
+                            <td>{{ item['Sodium'] }}</td>
+                            <td>{{ item['Potassium'] }}</td>
+                            <td>{{ item['Carbohydrates'] }}</td>
+                            <td>{{ item['Fibre'] }}</td>
+                            <td>{{ item['VitaminD'] }}</td>
+                            <td>{{ item['Sugars'] }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Dinner</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Item</th>
+                    <th>Calories</th>
+                    <th>Fats</th>
+                    <th>Proteins</th>
+                    <th>Iron</th>
+                    <th>Calcium</th>
+                    <th>Sodium</th>
+                    <th>Potassium</th>
+                    <th>Carbohydrates</th>
+                    <th>Fibre</th>
+                    <th>Vitamin D</th>
+                    <th>Sugars</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in recommendations %}
+                    {% if item.Meal == 'Dinner' %}
+                        <tr>
+                            <td>{{ item['Food Item'] }}</td>
+                            <td>{{ item['Calories'] }}</td>
+                            <td>{{ item['Fats'] }}</td>
+                            <td>{{ item['Proteins'] }}</td>
+                            <td>{{ item['Iron'] }}</td>
+                            <td>{{ item['Calcium'] }}</td>
+                            <td>{{ item['Sodium'] }}</td>
+                            <td>{{ item['Potassium'] }}</td>
+                            <td>{{ item['Carbohydrates'] }}</td>
+                            <td>{{ item['Fibre'] }}</td>
+                            <td>{{ item['VitaminD'] }}</td>
+                            <td>{{ item['Sugars'] }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('index') }}" class="button">Back to Generator</a>
+    </div>
+</body>
+</html>
